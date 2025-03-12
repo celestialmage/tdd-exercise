@@ -17,7 +17,9 @@ def blackjack_score(hand):
             ace_counter += 1
 
     for i in range(ace_counter):
-        if(score > 10 or i < ace_counter - 1):
+        if score >= 10 and ace_counter - i > 1:
+            score += 1
+        elif score > 10:
             score += 1
         else:
             score += 11
